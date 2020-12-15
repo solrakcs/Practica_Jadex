@@ -1,6 +1,7 @@
 public class RequestActionFromPlayer{
   public void body(){
     IMessageEvent startTurn = createMessageEvent("startTurn")
-    IMessageEvenet turnDone = sendMessageAndWait(startTurn);
+    System.out.println("");
+    IMessageEvent turnDone = sendMessageAndWait(startTurn);
   }
 }
