@@ -15,8 +15,7 @@
 	</imports>
 	<capability name="dfcap" file="jadex.planlib.DF"/>
 	<beliefs>
-		<belief name="accionesRestantes" class="Integer">
-				</belief>
+		<belief name="accionesRestantes" class="int"></belief>
 	</beliefs>
 
 	<plans>
@@ -37,10 +36,10 @@
 			</beliefs>
 			<goals>
 				<initialgoal ref="df_register">
-						<parameter ref="description">
-							<value> SFipa.createAgentDescription(null, SFipa.createServiceDescription("Survivor",null, null))
-							</value>
-						</parameter>
+					<parameter ref="description">
+						<value> SFipa.createAgentDescription(null, SFipa.createServiceDescription("Survivor",null, null))
+						</value>
+					</parameter>
 				</initialgoal>
 			</goals>
 		</configuration>

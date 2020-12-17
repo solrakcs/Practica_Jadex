@@ -12,6 +12,7 @@
 		<import>jadex.adapter.fipa.*</import>
 		<import>java.util.logging.*</import>
 		<import>java.util.*</import>
+		<import>Tablero.beliefs.JuegoIniciado</import>
 	</imports>
 
 	<capabilities>
@@ -21,7 +22,7 @@
 	<beliefs>
 		<belief name="numberOfPlayers" class="int"/>
 		<belief name="jugadoresRegistrados" class="boolean"/>
-		<belief name="juegoTerminado" class="boolean"/>
+		<belief name="juegoIniciado" class="JuegoIniciado"/>
 	</beliefs>
 
  	<goals>
@@ -30,9 +31,9 @@
     </achievegoalref>
 
     <performgoal name="informarJugadorInicioTurno">
-    	<contextCondition>
-    		
-    	</contextCondition>
+    	<creationCondition>
+    		$beliefbase.juegoIniciado
+    	</creationCondition>
     </performgoal>
   </goals>
 
@@ -50,23 +51,23 @@
 	</messageevent>
   </events>
 
- 	<configurations>
-  		<configuration name="initial">
-  			<beliefs>
-				<initialbelief ref="numberOfPlayers">
-					<fact>0</fact>
-				</initialbelief>
-				<initialbelief ref="juegoTerminado">
-					<fact>false</fact>
-				</initialbelief>
-			</beliefs>
-				<initialbelief ref="jugadoresRegistrados">
-					<fact>false</fact>
-				</initialbelief>
-			</beliefs>
-			<goals>
-				<initialgoal ref="df_search"/>
-			</goals>
-		</configuration>
-	</configurations>
+	<configurations>
+		<configuration name="initial">
+			<beliefs>
+			<initialbelief ref="numberOfPlayers">
+				<fact>0</fact>
+			</initialbelief>
+			<initialbelief ref="juegoTerminado">
+				<fact>false</fact>
+			</initialbelief>
+		</beliefs>
+			<initialbelief ref="jugadoresRegistrados">
+				<fact>false</fact>
+			</initialbelief>
+		</beliefs>
+		<goals>
+			<initialgoal ref="df_search"/>
+		</goals>
+	</configuration>
+</configurations>
 </agent>
