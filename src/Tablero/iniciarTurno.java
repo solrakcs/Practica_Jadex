@@ -17,7 +17,6 @@ public class IniciarTurno{
     //Hemos acabado el turno que se estaba realizando
     //buscamos en el DF al survivor
     ServiceDescription sd = new ServiceDescription();
-    sd.setType("Registrarse");
     sd.setName("Survivor")
     AgentDescription dfadesc = new AgentDescription();
     dfadesc.addService(sd);
@@ -26,10 +25,11 @@ public class IniciarTurno{
     IGoal ft = createGoal("df_search");
     ft.getParameter("description").setValue(dfadesc);
     ft.getParameter("constraints").setValue(sc);
+    Thread.sleep(1000);
     dispatchSubgoalAndWait(ft);
     System.out.println ("El tablero está buscando al jugador al que le toca actuar");
     AgentDescription[] result	= (AgentDescription[])ft.getParameterSet("result").getValues();
-    Thread.sleep(1000);
+    
     if (result.length>0){
       System.out.println ("El tablero comunica al jugador que es su turno");
       AgentIdentifier survivor = result[0].getName();
