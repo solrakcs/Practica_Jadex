@@ -14,14 +14,19 @@
 		<import>java.util.*</import>
 	</imports>
 	<capability name="dfcap" file="jadex.planlib.DF"/>
-	
-	<goals>
-		<initialgoal ref="df_register">
-				<parameter ref="description">
-					<value> SFipa.createAgentDescription(null, SFipa.createServiceDescription(“Survivor",“signUp", null))</value>
-				</parameter>
-		</initialgoal>
-	</goals>
+
+	<configuration name = "Registrarse">
+		<goals>
+			<initialgoal ref="df_register">
+
+					<parameter ref="description">
+						<value> SFipa.createAgentDescription(null, SFipa.createServiceDescription("Survivor","Registrarse", null))
+
+							</value>
+					</parameter>
+			</initialgoal>
+		</goals>
+	</configuration>
 
 
 </agent>
