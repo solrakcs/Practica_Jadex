@@ -12,7 +12,7 @@
 		<import>jadex.adapter.fipa.*</import>
 		<import>java.util.logging.*</import>
 		<import>java.util.*</import>
-		<import>Tablero.beliefs.JuegoIniciado</import>
+		<import>Tablero.beliefs</import>
 		<import>Tablero.plans.iniciarTurno</import>
 	</imports>
 
@@ -24,6 +24,7 @@
 		<belief name="numberOfPlayers" class="int"/>
 		<belief name="jugadoresRegistrados" class="boolean"/>
 		<belief name="juegoIniciado" class="JuegoIniciado"/>
+		<belief name="turnodeJugador" class="TurnoDe"/>
 	</beliefs>
 
  	<goals>

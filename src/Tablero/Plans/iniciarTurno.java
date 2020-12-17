@@ -11,7 +11,7 @@ import jadex.adapter.fipa.ServiceDescription;
 import java.util.Random;
 
 public class IniciarTurno{
-  public body(){
+  public void body(){
 
     System.out.println ("Toca cambiar de turno")
     //Hemos acabado el turno que se estaba realizando
@@ -26,11 +26,13 @@ public class IniciarTurno{
     ft.getParameter("description").setValue(dfadesc);
     ft.getParameter("constraints").setValue(sc);
     Thread.sleep(1000);
+
     dispatchSubgoalAndWait(ft);
     System.out.println ("El tablero está buscando al jugador al que le toca actuar");
     AgentDescription[] result	= (AgentDescription[])ft.getParameterSet("result").getValues();
     
     if (result.length>0){
+      //AgentIdentifier survivor = getBeliefbase().getBelief("turnodeJugador").getFact()
       System.out.println ("El tablero comunica al jugador que es su turno");
       AgentIdentifier survivor = result[0].getName();
       IMessageEvent msgsend = createMessageEvent("InformarEstadoTablero");

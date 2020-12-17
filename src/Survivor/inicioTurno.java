@@ -4,7 +4,7 @@ import jadex.adapter.fipa.AgentIdentifier;
 import jadex.adapter.fipa.SFipa;
 
 public class inicioTurno{
-  public body(){
+  public void body(){
     IMessageEvent msgrec = (IMessageEvent) getInitialEvent();
     HayAcciones predicado = (HayAcciones) msgrec.getContent();
     AgentIdentifier sender = (AgentIdentifier) msgrec.getParameter("sender").getValue();
