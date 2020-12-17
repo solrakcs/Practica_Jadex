@@ -20,7 +20,7 @@
 			<initialgoal ref="df_register">
 
 					<parameter ref="description">
-						<value> SFipa.createAgentDescription(null, SFipa.createServiceDescription("Survivor","Registrarse", null))
+						<value> SFipa.createAgentDescription(null, SFipa.createServiceDescription("Survivor",null, null))
 
 							</value>
 					</parameter>
