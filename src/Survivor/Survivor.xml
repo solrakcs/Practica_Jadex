@@ -14,19 +14,38 @@
 		<import>java.util.*</import>
 	</imports>
 	<capability name="dfcap" file="jadex.planlib.DF"/>
+	<beliefs>
+		<belief name="accionesRestantes" class="Integer">
+				</belief>
+	</beliefs>
 
-	<configuration name = "Registrarse">
-		<goals>
-			<initialgoal ref="df_register">
+	<plans>
+		<plan name="initTurno">
+			<body class="inicioTurno"/>
+			<trigger>
+				<messageEvent ref="informarInicioTurno"/>
+			</trigger>
+		</plan>
+	</plans>
 
-					<parameter ref="description">
-						<value> SFipa.createAgentDescription(null, SFipa.createServiceDescription("Survivor",null, null))
+	<configurations>
+		<configuration name = "Initialise">
+			<beliefs>
+				<initialbelief ref="accionesRestantes">
+					<fact>0</fact>
+				</initialbelief>
+			</beliefs>
+			<goals>
+				<initialgoal ref="df_register">
 
+						<parameter ref="description">
+							<value> SFipa.createAgentDescription(null, SFipa.createServiceDescription("Survivor",null, null))
 							</value>
-					</parameter>
-			</initialgoal>
-		</goals>
-	</configuration>
+						</parameter>
+				</initialgoal>
+			</goals>
+		</configuration>
+</configurations>
 
 
 </agent>
