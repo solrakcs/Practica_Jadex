@@ -8,7 +8,7 @@ public class inicioTurno{
     IMessageEvent msgrec = (IMessageEvent) getInitialEvent();
     HayAcciones predicado = (HayAcciones) msgrec.getContent();
     AgentIdentifier sender = (AgentIdentifier) msgrec.getParameter("sender").getValue();
- 		int acciones = (int) getBeliefbase().getBelief("acciones").getFact();
+ 	int acciones = (int) getBeliefbase().getBelief("accionesRestantes").getFact();
     System.out.println("Jugador mirando posibles acciones");
 		if (acciones>0)
 		{

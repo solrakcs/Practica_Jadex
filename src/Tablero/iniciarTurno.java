@@ -29,6 +29,7 @@ public class IniciarTurno{
     dispatchSubgoalAndWait(ft);
     System.out.println ("El tablero está buscando al jugador al que le toca actuar");
     AgentDescription[] result	= (AgentDescription[])ft.getParameterSet("result").getValues();
+    Thread.sleep(1000);
     if (result.length>0){
       System.out.println ("El tablero comunica al jugador que es su turno");
       AgentIdentifier survivor = result[0].getName();
