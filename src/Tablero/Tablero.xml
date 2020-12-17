@@ -13,6 +13,7 @@
 		<import>java.util.logging.*</import>
 		<import>java.util.*</import>
 		<import>Tablero.beliefs.JuegoIniciado</import>
+		<import>Tablero.plans.iniciarTurno</import>
 	</imports>
 
 	<capabilities>
