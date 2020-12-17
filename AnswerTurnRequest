@@ -1,7 +1,0 @@
-public class AnswerTurnRequest{
-  public void body(){
-    IMessageEvent actionsOptions = createMessageEvent("posiblesAcciones")
-    System.out.println("Voy a jugar, qué opciones tenemos?");
-    IMessageEvent opcionesRecibidas = sendMessageAndWait(actionsOptions)
-  }
-}
