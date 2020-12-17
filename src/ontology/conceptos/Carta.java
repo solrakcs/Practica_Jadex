@@ -1,3 +1,8 @@
+package ontology.conceptos;
+
+import ontology.Concepto;
+
+
 public class Carta {
 
         private String name;

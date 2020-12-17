@@ -1,3 +1,9 @@
+package ontology.acciones;
+
+
+import ontology.Accion;
+import ontology.conceptos.zombies.*;
+
 public class Atacar extends Accion{
     private Zombie a;
     public  Atacar(){}

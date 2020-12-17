@@ -22,7 +22,7 @@ public class IniciarTurno{
     AgentDescription dfadesc = new AgentDescription();
     dfadesc.addService(sd);
     SearchConstraints	sc	= new SearchConstraints();
-		sc.setMaxResults(-1); //Mirar lineas 24 y 25
+		sc.setMaxResults(1); //MIRAR LINEAS 24 Y 25
     IGoal ft = createGoal("df_search");
     ft.getParameter("description").setValue(dfadesc);
     ft.getParameter("constraints").setValue(sc);
@@ -31,12 +31,12 @@ public class IniciarTurno{
     AgentDescription[] result	= (AgentDescription[])ft.getParameterSet("result").getValues();
     if (result.length>0){
       System.out.println ("El tablero comunica al jugador que es su turno");
-      	AgentIdentifier survivor = result[0].getName();
-        IMessageEvent msgsend = createMessageEvent("InformarEstadoTablero");
-        ComunicarSituacion accion= new ComunicarSituacion();
-        msgsend.setContent(accion);
-  			msgsend.getParameterSet(SFipa.RECEIVERS).addValue(survivor);
-  			sendMessage(msgsend);
+      AgentIdentifier survivor = result[0].getName();
+      IMessageEvent msgsend = createMessageEvent("InformarEstadoTablero");
+      HayAcciones accion= new HayAcciones();
+      msgsend.setContent(accion);
+  		msgsend.getParameterSet(SFipa.RECEIVERS).addValue(survivor);
+  		sendMessage(msgsend);
     } else{
         	System.out.println("survivor no encontrado");
 
