@@ -1,0 +1,27 @@
+<agent xmlns="http://jadex.sourceforge.net/jadex"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://jadex.sourceforge.net/jadex
+	                    http://jadex.sourceforge.net/jadex-0.96.xsd"
+	name="Survivor"
+	package="src.Survivor">
+
+	<imports>
+		<import>jadex.runtime.*</import>
+		<import>jadex.planlib.*</import>
+		<import>jadex.util.*</import>
+		<import>jadex.adapter.fipa.*</import>
+		<import>java.util.logging.*</import>
+		<import>java.util.*</import>
+	</imports>
+	<capability name="dfcap" file="jadex.planlib.DF"/>
+	
+	<goals>
+		<initialgoal ref="df_register">
+				<parameter ref="description">
+					<value> SFipa.createAgentDescription(null, SFipa.createServiceDescription(“Survivor",“signUp", null))</value>
+				</parameter>
+		</initialgoal>
+	</goals>
+
+
+</agent>
